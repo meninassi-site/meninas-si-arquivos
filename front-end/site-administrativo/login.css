@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f4f4f4;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.logo {
+  padding: 20px 70px;
+  width: 290px;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  padding: 30px;
+}
+
+.formulario {
+  padding: 40px;
+  flex: 1;
+  min-width: 280px;
+  max-width: 400px;
+
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #56279b;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+input {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1.5px solid #56279b;
+  border-radius: 8px;
+}
+
+::placeholder {
+  color: #56279b;
+}
+
+.esqueceu {
+  font-size: 12px;
+  text-decoration: none;
+  color: black;
+  text-align: right;
+  margin-bottom: 12px;
+}
+
+button {
+  background-color: #5716b9;
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition:0.2s ease;
+  width: 150px;
+  display: block;
+  margin: 0 auto;
+}
+
+button:hover {
+  background-color: #3f1091;
+  transform: scale(1.05);
+}
+
+.right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pessoa {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+}
+
+.senha-container {
+  position: relative;
+}
+
+.senha-container input {
+  width: 100%;
+  padding-right: 45px;
+  height: 40px;
+  box-sizing: border-box;
+}
+
+.icone-senha {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.icone-senha:hover {
+  opacity: 1;
+}
+
+
+@media (max-width: 768px) {
+    .left h1 {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .left p {
+        font-size: 13.5px;
+        text-align: center;
+    }
+
+    .pessoa {
+        max-width: 100%;
+        width: 90%;
+        height: auto;
+    }
+}
+
+@media (max-width: 380px) {
+    .left h1 {
+        font-size: 20px;
+    }
+
+    .left p {
+        font-size: 13px;
+    }
+
+    .pessoa {
+        width: 100%;
+    }
+}

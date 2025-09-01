@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Editor de Postagem - Meninas de Sistemas</title>
+  <link rel="stylesheet" href="editor02.css" />
+</head>
+<body>
+
+  <header class="top-bar">
+    <img src="LogoMeninasDeSistema.png" alt="Logo Meninas de Sistemas" class="logo" />
+    <span class="user">Usuário<img src="Ellipse 3.png"/></span>
+  </header>
+
+  <div class="container">
+    <nav class="sidebar">
+      <ul>
+        <li><a href="#">Postagens</a></li>
+        <li><a href="#">Membros</a></li>
+      </ul>
+    </nav>
+
+    <main class="content">
+      <h1>Editor de Postagem</h1>
+
+      <form class="post-form">
+        <label for="titulo">Título</label>
+        <input type="text" id="titulo" name="titulo" placeholder="Título" />
+
+        <fieldset class="radio-group">
+          <legend>Tipo de Postagem</legend>
+          <label><input type="radio" name="tipo" value="noticia" checked /> Notícia</label>
+          <label><input type="radio" name="tipo" value="evento" /> Evento</label>
+        </fieldset>
+
+        <label for="descricao">Descrição</label>
+        <textarea id="descricao" name="descricao" rows="6" placeholder="Máximo X caracteres"></textarea>
+
+        <div class="form-buttons">
+          <button type="submit" class="btn salvar">Salvar</button>
+          <button type="button" class="btn excluir">Excluir</button>
+        </div>
+      </form>
+    </main>
+
+    <aside class="image-upload">
+      <h2>Imagem</h2>
+      <div class="image-placeholder">
+        <img src="img-editor_cortada.png"Imagem" />
+      </div>
+    </aside>
+  </div>
+
+</body>
+</html>
