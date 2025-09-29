@@ -1,12 +1,19 @@
 import os
-from dotenv import load_dotenv
+from datetime import timedelta
 
-load_dotenv()
+basedir = os.path.abspath(os.path.dirname(__file__))
 
 class Config:
-    SECRET_KEY = os.getenv("SECRET_KEY", "default-secret-key")
-    SQLALCHEMY_DATABASE_URI = (
-        f"mysql+pymysql://{os.getenv('DB_USER')}:{os.getenv('DB_PASSWORD')}"
-        f"@{os.getenv('DB_HOST')}:{os.getenv('DB_PORT')}/{os.getenv('DB_NAME')}"
-    )
+    # Configurações do banco de dados
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
+        'sqlite:///' + os.path.join(basedir, 'app.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+    
+    # Configurações de segurança
+    SECRET_KEY = os.environ.get('SECRET_KEY') or 'sua-chave-secreta-muito-segura-aqui-meninassi'
+    JWT_SECRET_KEY = os.environ.get('JWT_SECRET_KEY') or 'sua-chave-jwt-muito-segura-meninassi'
+    JWT_ACCESS_TOKEN_EXPIRES = timedelta(hours=24)
+    
+    # Configurações de upload
+    MAX_CONTENT_LENGTH = 16 * 1024 * 1024  # 16MB max file size
+    UPLOAD_FOLDER = os.path.join(basedir, 'uploads')
