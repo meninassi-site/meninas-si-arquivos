@@ -1,0 +1,166 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+}
+
+/* Header fixo */
+header {
+  background-color: #fafafa;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+}
+.logo img {
+  height: 50px;
+  margin-right: 10px;
+}
+.logo h1 {
+  font-size: 1rem;
+  color: #5e2ca5;
+}
+.logo span {
+  color: #ff4ec6;
+}
+
+/* Info do usuário */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-right: 70px;
+}
+.user-info a {
+  color: #5e2ca5;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Menu lateral fixo */
+nav {
+  background-color: #f8f6fc;
+  width: 120px;
+  padding: 0.5rem;
+  position: fixed;
+  top: 80px;
+  left: 0;
+  border-radius: 0 10px 10px 0;
+}
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+nav ul li {
+  margin: 0.5rem 0;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #5e2ca5;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+/* Conteúdo principal */
+main {
+  margin-left: 140px;
+  padding: 120px 2rem 2rem 2rem;
+}
+
+/* Título */
+h2 {
+  color: #5e2ca5;
+}
+
+/* Lista de membros */
+.member-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.member-card {
+  display: flex;
+  align-items: center;
+  background-color: #f0e9fa;
+  padding: 1rem;
+  border-radius: 12px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.member-card img {
+  width: 48px;
+  height: 48px;
+  margin-right: 1rem;
+}
+.member-info {
+  flex-grow: 1;
+  min-width: 200px;
+}
+.member-info p {
+  margin: 0.2rem 0;
+}
+
+/* Três pontinhos */
+.options {
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0 0.5rem;
+}
+
+/* Botão adicionar */
+#addMemberBtn {
+  margin-top: 2rem;
+  padding: 0.8rem 1.5rem;
+  background-color: #5e2ca5;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Menu dropdown */
+.menu-container {
+  position: relative;
+}
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 30px;
+  background-color: white;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+  border-radius: 6px;
+  overflow: hidden;
+  z-index: 100;
+}
+.dropdown-menu button {
+  display: block;
+  padding: 0.5rem 1rem;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+.dropdown-menu button:hover {
+  background-color: #eee;
+}
