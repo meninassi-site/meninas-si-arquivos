@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gerenciar Membros</title>
+  <link rel="icon" href="../../src/IconMeninasSistmas.png" type="image/png">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="../../src/LogoMeninasDeSistema.png" alt="Logo Meninas Sistemas"/>
+    </div>
+    <div class="user-info">
+      <a href="#">Usuário</a>
+      <img src="../../src/Ellipse 3.png" alt="Ícone do usuário" />
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#">Postagens</a></li>
+      <li><a href="#" class="active">Membros</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h2>Gerenciar Membros</h2>
+    <section class="member-list">
+      <!-- Card de membro -->
+      <article class="member-card">
+        <img src="../../src/Ellipse 3.png" alt="Avatar">
+        <div class="member-info">
+          <p><strong>Nome do Membro:</strong> Luisa</p>
+          <p><strong>Número de Telefone:</strong> 00 000-00-000</p>
+          <p><strong>Idade:</strong> 24 anos</p>
+          <p><strong>Email:</strong> luisa@gmail.com</p>
+        </div>
+        <div class="menu-container">
+          <div class="options" onclick="toggleMenu(this)">⋮</div>
+          <div class="dropdown-menu">
+            <button onclick="editMember('Luisa')">Editar</button>
+            <button onclick="deleteMember('Luisa')">Excluir</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Duplicado para os demais membros -->
+      <article class="member-card">
+        <img src="../../src/Ellipse 3.png" alt="Avatar">
+        <div class="member-info">
+          <p><strong>Nome do Membro:</strong> Maria</p>
+          <p><strong>Número de Telefone:</strong> 00 000-00-000</p>
+          <p><strong>Idade:</strong> 25 anos</p>
+          <p><strong>Email:</strong> maria@yahoo.com</p>
+        </div>
+        <div class="menu-container">
+          <div class="options" onclick="toggleMenu(this)">⋮</div>
+          <div class="dropdown-menu">
+            <button onclick="editMember('Maria')">Editar</button>
+            <button onclick="deleteMember('Maria')">Excluir</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="member-card">
+        <img src="../../src/Ellipse 3.png" alt="Avatar">
+        <div class="member-info">
+          <p><strong>Nome do Membro:</strong> Ana</p>
+          <p><strong>Número de Telefone:</strong> 00 000-00-000</p>
+          <p><strong>Idade:</strong> 19 anos</p>
+          <p><strong>Email:</strong> ana@gmail.com</p>
+        </div>
+        <div class="menu-container">
+          <div class="options" onclick="toggleMenu(this)">⋮</div>
+          <div class="dropdown-menu">
+            <button onclick="editMember('Ana')">Editar</button>
+            <button onclick="deleteMember('Ana')">Excluir</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="member-card">
+        <img src="../../src/Ellipse 3.png" alt="Avatar">
+        <div class="member-info">
+          <p><strong>Nome do Membro:</strong> Carla</p>
+          <p><strong>Número de Telefone:</strong> 00 000-00-000</p>
+          <p><strong>Idade:</strong> 22 anos</p>
+          <p><strong>Email:</strong> carla@yahoo.com</p>
+        </div>
+        <div class="menu-container">
+          <div class="options" onclick="toggleMenu(this)">⋮</div>
+          <div class="dropdown-menu">
+            <button onclick="editMember('Carla')">Editar</button>
+            <button onclick="deleteMember('Carla')">Excluir</button>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <button id="addMemberBtn">+ Adicionar Membro</button>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
