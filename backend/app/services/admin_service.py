@@ -12,10 +12,20 @@ def get_by_id(id_admin):
     return admin
 
 def create(data):
-    admin = admin_schema.load(data)
+    username = data.get("username")
+    email = data.get("email")
+    password = data.get("password")
+
+    if not all([username, email, password]):
+        raise ValueError("Campos obrigatórios: username, email, password")
+
+    admin = Admin(username=username, email=email)
+    admin.set_password(password)  # gera o hash
+
     db.session.add(admin)
     db.session.commit()
     return admin
+
 
 def update(id_admin, data):
     admin = get_by_id(id_admin)
