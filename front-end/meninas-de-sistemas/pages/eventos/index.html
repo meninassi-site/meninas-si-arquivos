@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meninas de Sistemas – Eventos</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Topo -->
+  <header class="top-bar">
+    <div class="logo">
+      <img src="fotos/logo.png" alt="Logo Meninas de Sistemas">
+      <span>
+        <strong>Meninas de Sistemas</strong><br>
+        Universidade Federal do Pará
+      </span>
+    </div>
+    <div class="user-info">
+      <img src="fotos/user.png" alt="Usuário">
+      <span>Bem-vinda!</span>
+    </div>
+  </header>
+
+  <!-- Layout -->
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <nav>
+        <button><a href="#">Página Inicial</a></button>
+        <button><a href="#">Sobre</a></button>
+        <button><a href="#" class="ativo">Eventos</a></button>
+        <button><a href="#">Membros</a></button>
+      </nav>
+    </aside>
+
+    <!-- Conteúdo principal -->
+    <main class="content">
+      <div class="actions">
+        <h2 class="section-title">Eventos</h2>
+        <p>Próximos eventos em que o projeto participará e outras ações voltadas à participação das mulheres na computação.</p>
+      </div>
+
+      <section class="section">
+        <div class="carousel">
+          <button class="arrow left" id="prev">&#10094;</button>
+
+          <!-- Lista de eventos -->
+          <div class="cards" id="lista-eventos">
+            <!-- Evento 1 -->
+            <div class="card">
+              <img src="fotos/1.jpg" alt="3° Encontro de Mulheres na Computação">
+              <h3>3° Encontro de Mulheres na Computação</h3>
+              <p>Iniciativa para incentivar a equidade de gênero na área tecnológica.</p>
+              <div class="detalhes">
+                <span>📅 01/12/2025</span>
+                <span>🕒 11h45</span>
+                <span>🎙️ Palestra</span>
+                <span>👤 Devon Lane</span>
+              </div>
+            </div>
+
+            <!-- Evento 2 -->
+            <div class="card">
+              <img src="fotos/2.jpg" alt="Tecnologia e Inclusão">
+              <h3>Tecnologia e Inclusão</h3>
+              <p>Debate sobre o acesso das mulheres à tecnologia e a importância da diversidade nas equipes.</p>
+              <div class="detalhes">
+                <span>📅 08/12/2025</span>
+                <span>🕒 14h00</span>
+                <span>🎙️ Mesa Redonda</span>
+                <span>👤 Ana Souza</span>
+              </div>
+            </div>
+
+            <!-- Evento 3 -->
+            <div class="card">
+              <img src="fotos/3.jpg" alt="Workshop: Programação Criativa">
+              <h3>Workshop: Programação Criativa</h3>
+              <p>Oficina prática voltada para iniciantes em programação e pensamento computacional.</p>
+              <div class="detalhes">
+                <span>📅 15/12/2025</span>
+                <span>🕒 09h30</span>
+                <span>🧩 Oficina</span>
+                <span>👤 Camila Ramos</span>
+              </div>
+            </div>
+
+            <!-- Evento 4 -->
+            <div class="card">
+              <img src="fotos/4.jpg" alt="Jornada da Computação">
+              <h3>Jornada da Computação – Sistemas de Informação</h3>
+              <p>A Jornada da Computação 2025 trará palestras, oficinas e painéis sobre inovação e diversidade na área de tecnologia.</p>
+              <div class="detalhes">
+                <span>📅 03 a 05/12/2025</span>
+                <span>🏛️ Faculdade de Sistemas de Informação</span>
+                <span>👩‍💻 Organização: Meninas de Sistemas</span>
+              </div>
+            </div>
+
+          <button class="arrow right" id="next">&#10095;</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2025 Meninas de Sistemas. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
