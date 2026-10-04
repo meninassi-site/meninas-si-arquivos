@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Administrativo - Meninas de Sistemas</title>
+
+    <!-- Fonte Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS GLOBAL -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <style>
+        /* CSS Específico do Painel Home */
+        .sidebar-menu {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .sidebar-item {
+            padding: 12px 18px;
+            text-decoration: none;
+            color: #4b5563;
+            font-weight: 500;
+            border-left: 4px solid transparent;
+            transition: all 0.2s ease;
+            border-radius: 0 6px 6px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sidebar-item:hover {
+            background-color: #f3f4f6;
+            color: #111827;
+        }
+
+        /* Item ativo neutro para a Home */
+        .sidebar-item.active {
+            border-left-color: #374151;
+            color: #111827;
+            background-color: #e5e7eb;
+            font-weight: 600;
+        }
+
+        /* Cabeçalho da Visão Geral */
+        .dashboard-header-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e5e7eb;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .dashboard-title h1 {
+            font-size: 1.6rem;
+            color: #111827;
+            margin: 0;
+        }
+
+        .action-buttons-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn-action {
+            background-color: #56279b;
+            color: #ffffff;
+            padding: 9px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+
+        .btn-action:hover {
+            background-color: #431e7a;
+            transform: translateY(-1px);
+        }
+
+        .btn-action:active {
+            transform: translateY(0);
+        }
+
+        /* Grid de Cards de Resumo (Visão Geral ADM) */
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 35px;
+        }
+
+        .overview-card {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .overview-info h3 {
+            font-size: 0.8rem;
+            color: #6b7280;
+            margin: 0 0 5px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .overview-info p {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #111827;
+            margin: 0;
+        }
+
+        .overview-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 8px;
+            background-color: #f3f4f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #374151;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body class="admin-body">
+
+<!-- HEADER SIMPLIFICADO DO PAINEL -->
+<header class="admin-header">
+    <div class="admin-header-container">
+        <div class="logo-container">
+            <a href="adm_home.html">
+                <img src="../assets/images/icons/LogoMeninasDeSistema.png" alt="Logo Meninas de Sistemas" class="logo-topo">
+            </a>
+        </div>
+
+        <div class="admin-user-profile">
+            <span>Usuário</span>
+            <svg class="user-icon" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+            </svg>
+        </div>
+    </div>
+</header>
+
+<!-- ESTRUTURA DO DASHBOARD (SIDEBAR + CONTEÚDO) -->
+<div class="admin-dashboard-container">
+
+    <!-- MENU LATERAL -->
+    <aside class="admin-sidebar">
+        <nav class="sidebar-menu">
+            <a href="adm_home.html" class="sidebar-item active">
+                <span>Início / Dashboard</span>
+            </a>
+            <a href="adm_membros.html" class="sidebar-item">
+                <span>Cadastrar Administrador</span>
+            <a href="adm_noticias.html" class="sidebar-item">
+                <span>Notícias</span>
+            </a>
+            <a href="adm_eventos.html" class="sidebar-item">
+                <span>Eventos</span>
+            </a>
+            <a href="adm_membros.html" class="sidebar-item">
+                <span>Membros</span>
+
+            </a>
+        </nav>
+    </aside>
+
+    <!-- CONTEÚDO PRINCIPAL DAS SEÇÕES -->
+    <main class="admin-main-content">
+
+        <!-- CABEÇALHO DO DASHBOARD + AÇÕES RÁPIDAS -->
+        <div class="dashboard-header-actions">
+            <div class="dashboard-title">
+                <h1>Painel Geral de Controle</h1>
+            </div>
+        </div>
+
+        <!-- CARDS DE VISÃO GERAL DA HOME -->
+        <div class="overview-grid">
+            <div class="overview-card">
+                <div class="overview-info">
+                    <h3>Total Notícias</h3>
+                    <p>12</p>
+                </div>
+                <div class="overview-icon">📰</div>
+            </div>
+            <div class="overview-card">
+                <div class="overview-info">
+                    <h3>Eventos Ativos</h3>
+                    <p>5</p>
+                </div>
+                <div class="overview-icon">📅</div>
+            </div>
+            <div class="overview-card">
+                <div class="overview-info">
+                    <h3>Membros</h3>
+                    <p>24</p>
+                </div>
+                <div class="overview-icon">👥</div>
+            </div>
+            <div class="overview-card">
+                <div class="overview-info">
+                    <h3>Usuários ADM</h3>
+                    <p>4</p>
+                </div>
+                <div class="overview-icon">👤</div>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 1: GERENCIAR NOTÍCIAS -->
+        <section class="admin-carousel-section">
+            <h2 class="admin-section-title">Últimas Notícias</h2>
+            
+            <div class="admin-carousel-wrapper">
+                <button class="arrow-btn prev" id="prev-noticias" aria-label="Notícias Anteriores">&#10094;</button>
+                
+                <div class="admin-cards-container" id="lista-noticias">
+                    <div class="admin-card">
+                        <img src="../assets/images/foto-noticia.jpg" alt="Notícia" class="card-img" onerror="this.src='../assets/images/icons/LogoMeninasDeSistema.png';">
+                        <h3 class="card-title">How it Started?</h3>
+                        <a href="editor_postagem.html" class="card-edit-link">Editar Notícia &rsaquo;</a>
+                        <span class="card-date">01/12/2023 | 11h45 | Por Redação</span>
+                    </div>
+                </div>
+
+                <button class="arrow-btn next" id="next-noticias" aria-label="Próximas Notícias">&#10095;</button>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 2: GERENCIAR EVENTOS -->
+        <section class="admin-carousel-section">
+            <h2 class="admin-section-title">Próximos Eventos</h2>
+            
+            <div class="admin-carousel-wrapper">
+                <button class="arrow-btn prev" id="prev-eventos" aria-label="Eventos Anteriores">&#10094;</button>
+                
+                <div class="admin-cards-container" id="lista-eventos">
+                    <div class="admin-card">
+                        <img src="../assets/images/foto-noticia.jpg" alt="Evento" class="card-img" onerror="this.src='../assets/images/icons/LogoMeninasDeSistema.png';">
+                        <h3 class="card-title">Workshop de Tecnologia</h3>
+                        <a href="editor_evento.html" class="card-edit-link">Editar Evento &rsaquo;</a>
+                        <span class="card-date">15/05/2026 | 14h00 | Por Redação</span>
+                    </div>
+                </div>
+
+                <button class="arrow-btn next" id="next-eventos" aria-label="Próximos Eventos">&#10095;</button>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 3: GERENCIAR MEMBROS -->
+        <section class="admin-carousel-section">
+            <h2 class="admin-section-title">Ultimos Membros cadastrados</h2>
+            
+            <div class="admin-carousel-wrapper">
+                <button class="arrow-btn prev" id="prev-membros" aria-label="Membros Anteriores">&#10094;</button>
+                
+                <div class="admin-cards-container" id="lista-membros">
+                    <div class="admin-card">
+                        <img src="../assets/images/foto-noticia.jpg" alt="Membro" class="card-img" onerror="this.src='../assets/images/icons/LogoMeninasDeSistema.png';">
+                        <h3 class="card-title">Nome do Membro</h3>
+                        <a href="editor_membro.html" class="card-edit-link">Editar Membro &rsaquo;</a>
+                        <span class="card-date">Coordenadora | Cadastrado em 2024</span>
+                    </div>
+                </div>
+
+                <button class="arrow-btn next" id="next-membros" aria-label="Próximos Membros">&#10095;</button>
+            </div>
+        </section>
+
+    </main>
+</div>
+
+<!-- JS NAVEGAÇÃO DOS CARROSSEIS -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        function setupCarousel(containerId, prevBtnId, nextBtnId) {
+            const container = document.getElementById(containerId);
+            const btnPrev = document.getElementById(prevBtnId);
+            const btnNext = document.getElementById(nextBtnId);
+
+            if (container && btnPrev && btnNext) {
+                btnNext.addEventListener('click', () => {
+                    container.scrollBy({ left: 320, behavior: 'smooth' });
+                });
+
+                btnPrev.addEventListener('click', () => {
+                    container.scrollBy({ left: -320, behavior: 'smooth' });
+                });
+            }
+        }
+
+        setupCarousel('lista-noticias', 'prev-noticias', 'next-noticias');
+        setupCarousel('lista-eventos', 'prev-eventos', 'next-eventos');
+        setupCarousel('lista-membros', 'prev-membros', 'next-membros');
+    });
+</script>
+
+</body>
+</html>

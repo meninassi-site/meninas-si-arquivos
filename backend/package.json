@@ -1,0 +1,41 @@
+{
+  "name": "meninas-si-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "API for the Meninas de Sistemas site (members, events, workshops, short courses, admin auth).",
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/server.js",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:deploy": "prisma migrate deploy",
+    "prisma:studio": "prisma studio",
+    "seed": "tsx prisma/seed.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@prisma/client": "6.19.3",
+    "bcryptjs": "3.0.3",
+    "cors": "2.8.6",
+    "dotenv": "18.0.5",
+    "express": "5.2.1",
+    "jsonwebtoken": "9.0.3",
+    "multer": "2.4.0",
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@types/cors": "2.8.19",
+    "@types/express": "5.0.6",
+    "@types/jsonwebtoken": "9.0.10",
+    "@types/multer": "2.3.0",
+    "@types/node": "26.6.4",
+    "prisma": "6.19.3",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3"
+  },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
+  }
+}

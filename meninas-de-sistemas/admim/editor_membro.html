@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor de Membro - Meninas de Sistemas</title>
+
+    <!-- Fonte Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS GLOBAL -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="admin-body">
+
+<!-- HEADER SIMPLIFICADO -->
+<header class="admin-header">
+    <div class="admin-header-container">
+        <div class="logo-container">
+            <a href="adm_noticias.html">
+                <img src="../assets/images/LogoMeninasDeSistema.png" alt="Logo Meninas de Sistemas" class="logo-topo">
+            </a>
+        </div>
+
+        <div class="admin-user-profile">
+            <span>Usuário</span>
+            <svg class="user-icon" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+            </svg>
+        </div>
+    </div>
+</header>
+
+<!-- DASHBOARD (SIDEBAR + FORMULÁRIO) -->
+<div class="admin-dashboard-container">
+
+    <!-- MENU LATERAL FLUTUANTE -->
+    <aside class="admin-sidebar">
+        <nav class="sidebar-menu">
+            <a href="adm_noticias.html" class="sidebar-item">Postagens</a>
+            <a href="gerenciamento_membro.html" class="sidebar-item active">Membros</a>
+        </nav>
+    </aside>
+
+    <!-- CONTEÚDO PRINCIPAL (EDITOR DE MEMBRO) -->
+    <main class="admin-main-content">
+        
+        <form class="editor-layout">
+            
+            <!-- COLUNA DA ESQUERDA: CAMPOS DO MEMBRO -->
+            <div class="editor-fields-column">
+                
+                <h2 class="editor-title">Adicionar Membro</h2>
+
+                <!-- Campo Nome -->
+                <div class="editor-group">
+                    <label for="nome" class="member-field-label">NOME DO MEMBRO</label>
+                    <input type="text" id="nome" name="nome" class="editor-input" placeholder="Ex: Carla" required>
+                </div>
+
+                <!-- Campo Telefone -->
+                <div class="editor-group">
+                    <label for="telefone" class="member-field-label">NÚMERO DE TELEFONE</label>
+                    <input type="tel" id="telefone" name="telefone" class="editor-input" placeholder="00 000-00-000" required>
+                </div>
+
+                <!-- Campo Idade -->
+                <div class="editor-group">
+                    <label for="idade" class="member-field-label">IDADE</label>
+                    <input type="text" id="idade" name="idade" class="editor-input" placeholder="Ex: 22 anos" required>
+                </div>
+
+                <!-- Campo Email -->
+                <div class="editor-group">
+                    <label for="email" class="member-field-label">EMAIL</label>
+                    <input type="email" id="email" name="email" class="editor-input" placeholder="carla@yahoo.com" required>
+                </div>
+
+                <!-- BOTAO DE SALVAR E EXCLUIR -->
+                <div class="editor-buttons">
+                    <button type="submit" class="btn-editor btn-salvar">Salvar</button>
+                    <button type="button" class="btn-editor btn-excluir">Excluir</button>
+                </div>
+
+            </div>
+
+            <!-- COLUNA DA DIREITA: FOTO DO MEMBRO -->
+            <div class="editor-image-column">
+                <h2 class="editor-title image-title">Foto de Perfil</h2>
+                
+                <div class="image-upload-box" onclick="document.getElementById('member-photo-input').click();">
+                    <input type="file" id="member-photo-input" accept="image/*" style="display: none;" onchange="previewMemberPhoto(event)">
+                    
+                    <div id="upload-placeholder" class="upload-placeholder">
+                        <svg class="placeholder-icon" width="80" height="80" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                        </svg>
+                    </div>
+                    <img id="member-photo-preview" src="#" alt="Pré-visualização" style="display: none;" class="preview-img">
+                </div>
+            </div>
+
+        </form>
+
+    </main>
+
+</div>
+
+<script>
+    // Função para pré-visualizar a foto selecionada
+    function previewMemberPhoto(event) {
+        const reader = new FileReader();
+        reader.onload = function() {
+            const output = document.getElementById('member-photo-preview');
+            const placeholder = document.getElementById('upload-placeholder');
+            output.src = reader.result;
+            output.style.display = 'block';
+            placeholder.style.display = 'none';
+        };
+        if(event.target.files[0]){
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    }
+</script>
+
+</body>
+</html>

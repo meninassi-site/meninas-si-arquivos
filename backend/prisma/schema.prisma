@@ -1,0 +1,118 @@
+// Prisma schema for the Meninas de Sistemas backend.
+//
+// Modeled directly on the provided ER diagram (admin / member / event /
+// workshop / short_course), with these deliberate deviations — see README.md
+// "Database" section for the full explanation:
+//
+//   - `admin.password` is VARCHAR(255) instead of the diagram's VARCHAR(45):
+//     a bcrypt hash does not fit in 45 characters.
+//   - `short_course`'s primary key is named `id_short_course`, not
+//     `id_workshop` as drawn (that appears to be a copy/paste artifact from
+//     duplicating the workshop entity — keeping it would make the schema
+//     actively misleading).
+//   - The diagram's `lenght_time` and `lacturer` column names (typos for
+//     "length_time" / "lecturer") are kept verbatim, since nothing about
+//     them is ambiguous and the diagram is the source of truth for this
+//     project's data dictionary.
+//   - Every column other than primary keys, foreign keys and the small set
+//     of fields each entity clearly can't do without (title/name, admin
+//     credentials) is nullable, since the diagram does not specify
+//     nullability and the admin UI mockups treat most fields as optional.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Admin {
+  id_admin     Int      @id @default(autoincrement())
+  username     String   @unique @db.VarChar(45)
+  email        String   @unique @db.VarChar(45)
+  /// bcrypt hash — widened from the diagram's VARCHAR(45), see file header.
+  password     String   @db.VarChar(255)
+  created_time DateTime @default(now()) @db.Timestamp(0)
+
+  members      Member[]
+  events       Event[]
+  workshops    Workshop[]
+  shortCourses ShortCourse[]
+
+  @@map("admin")
+}
+
+model Member {
+  id_member      Int      @id @default(autoincrement())
+  name           String   @db.VarChar(100)
+  /// Profile photo, stored inline as in the diagram (MEDIUMBLOB).
+  photo          Bytes?   @db.MediumBlob
+  biography      String?  @db.Text
+  contact_email  String?  @db.VarChar(45)
+  class_name     String?  @db.VarChar(45)
+  lattes         String?  @db.Text
+  linkedin       String?  @db.Text
+
+  admin_id_admin Int
+  admin          Admin    @relation(fields: [admin_id_admin], references: [id_admin], onDelete: Cascade)
+
+  @@map("member")
+}
+
+model Event {
+  id_event           Int       @id @default(autoincrement())
+  title              String    @db.VarChar(100)
+  event_description  String?   @db.Text
+  organizer          String?   @db.VarChar(45)
+  location           String?   @db.VarChar(45)
+  lenght_time        Int?
+  cover_photo        Bytes?    @db.MediumBlob
+  registration_link  String?   @db.Text
+  data_occurence     DateTime? @db.Date
+  time_occurence     DateTime? @db.Time(0)
+
+  admin_id_admin     Int
+  admin              Admin     @relation(fields: [admin_id_admin], references: [id_admin], onDelete: Cascade)
+
+  @@map("event")
+}
+
+model Workshop {
+  id_workshop         Int       @id @default(autoincrement())
+  title               String    @db.VarChar(100)
+  event_description   String?   @db.Text
+  lacturer            String?   @db.VarChar(45)
+  location            String?   @db.VarChar(45)
+  lenght_time         Int?
+  cover_photo         Bytes?    @db.Blob
+  registration_link   String?   @db.Text
+  data_occurence      DateTime? @db.Date
+  time_occurence      DateTime? @db.Time(0)
+
+  admin_id_admin      Int
+  admin               Admin     @relation(fields: [admin_id_admin], references: [id_admin], onDelete: Cascade)
+
+  @@map("workshop")
+}
+
+model ShortCourse {
+  /// Named id_short_course rather than the diagram's id_workshop — see
+  /// file header.
+  id_short_course     Int       @id @default(autoincrement())
+  title               String    @db.VarChar(100)
+  event_description   String?   @db.Text
+  lacturer            String?   @db.VarChar(45)
+  location            String?   @db.VarChar(45)
+  lenght_time         Int?
+  cover_photo         Bytes?    @db.Blob
+  registration_link   String?   @db.Text
+  data_occurence      DateTime? @db.Date
+  time_occurence      DateTime? @db.Time(0)
+
+  admin_id_admin      Int
+  admin               Admin     @relation(fields: [admin_id_admin], references: [id_admin], onDelete: Cascade)
+
+  @@map("short_course")
+}

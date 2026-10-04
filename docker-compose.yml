@@ -1,0 +1,32 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: meninas_si_mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    ports:
+      # Exposed on 3307 (not 3306) by default so this doesn't clash with any
+      # other MySQL container already running on the host.
+      - "${MYSQL_PORT:-3307}:3306"
+    volumes:
+      - meninas_si_mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  adminer:
+    image: adminer
+    restart: unless-stopped
+    depends_on:
+      - mysql
+    ports:
+      - "${ADMINER_PORT:-8081}:8080"
+
+volumes:
+  meninas_si_mysql_data:
