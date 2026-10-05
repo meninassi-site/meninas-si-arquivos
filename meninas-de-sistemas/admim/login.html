@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrada - Meninas de Sistemas</title>
+
+    <!-- Fonte Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS GLOBAL -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .login-wrapper {
+            width: 100%;
+            max-width: 1100px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            padding: 20px;
+        }
+
+        /* LADO ESQUERDO: FORMULÁRIO */
+        .login-left-content {
+            flex: 1;
+            max-width: 420px;
+        }
+
+        .login-logo {
+            height: 55px;
+            margin-bottom: 40px;
+            display: block;
+        }
+
+        .login-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #4a154b; /* Tom de roxo escuro */
+            margin-bottom: 30px;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #333333;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1.5px solid #6b21a8; /* Borda roxa fina */
+            border-radius: 12px;
+            font-size: 0.95rem;
+            color: #6b21a8;
+            outline: none;
+            transition: all 0.2s ease;
+        }
+
+        .form-group input::placeholder {
+            color: #8b5cf6;
+            opacity: 0.7;
+        }
+
+        .form-group input:focus {
+            box-shadow: 0 0 0 3px rgba(107, 33, 168, 0.15);
+        }
+
+        .forgot-password-container {
+            text-align: right;
+            margin-top: -8px;
+        }
+
+        .forgot-password-link {
+            font-size: 0.85rem;
+            color: #333333;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .forgot-password-link:hover {
+            text-decoration: underline;
+        }
+
+        .btn-submit {
+            width: 160px;
+            padding: 14px;
+            background-color: #5b21b6; /* Roxo vibrante */
+            color: #ffffff;
+            border: none;
+            border-radius: 14px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            margin-top: 10px;
+        }
+
+        .btn-submit:hover {
+            background-color: #4c1d95;
+        }
+
+        .btn-submit:active {
+            transform: scale(0.98);
+        }
+
+        /* LADO DIREITO: IMAGEM DE DESTAQUE */
+        .login-right-content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        /* RESPONSIVIDADE */
+        @media (max-width: 850px) {
+            .login-wrapper {
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .login-right-content {
+                display: none; /* Esconde a imagem em telas menores para focar no login */
+            }
+
+            .login-left-content {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-wrapper">
+
+    <!-- COLUNA DA ESQUERDA: LOGO + FORMULÁRIO -->
+    <div class="login-left-content">
+        
+        <!-- Logo -->
+        <a href="index.html">
+            <img src="../assets/images/icons/LogoMeninasDeSistema.png" alt="Logo Meninas de Sistemas" class="login-logo">
+        </a>
+
+        <!-- Título -->
+        <h1 class="login-title">Login</h1>
+
+        <!-- Formulário -->
+        <form action="home_user.html" method="GET" class="login-form">
+            
+            <!-- Campo E-mail -->
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="usuario@email.com" required>
+            </div>
+
+            <!-- Campo Senha -->
+            <div class="form-group">
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha" placeholder="6 caracteres ou mais" required>
+            </div>
+
+            <!-- Link Esqueceu sua senha -->
+            <div class="forgot-password-container">
+                <a href="recuperar-senha.html" class="forgot-password-link">Esqueceu sua senha?</a>
+            </div>
+
+            <!-- Botão Entrar -->
+            <button type="submit" class="btn-submit">Entrar</button>
+
+        </form>
+    </div>
+
+    <!-- COLUNA DA DIREITA: ILUSTRAÇÃO DA MOÇA COM O RETÂNGULO ROXO -->
+    <div class="login-right-content">
+        <!-- Substitua pelo caminho exato da sua imagem de destaque no projeto -->
+        <img src="../assets/images/icons/pessoa.png" alt="Meninas de Sistemas" class="hero-image">
+    </div>
+
+</div>
+
+</body>
+</html>

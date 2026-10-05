@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membros | Projeto Meninas de Sistemas</title>
+    
+    <!-- CSS GLOBAL -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    
+    <style>
+        .card-membro {
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card-membro:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(86, 39, 155, 0.15);
+        }
+        .icone-rede { position: relative; z-index: 5; }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER PADRONIZADO -->
+    <header class="header">
+        <div class="logo-container">
+            <img src="../assets/images/icons/LogoMeninasDeSistema.png" alt="Logo Meninas de Sistemas" class="logo-topo">
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="../index.html">Página Inicial</a></li>
+                <li><a href="../noticias/index.html">Notícias</a></li>
+                <li><a href="../eventos/index.html">Eventos</a></li>
+                <li><a href="index.html" style="color:#ec4899; text-decoration:underline;">Membros</a></li>
+                <li><a href="../sobre/index.html">Sobre</a></li>
+                <li><a href="../admim/login_home.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- BANNER HERO -->
+    <section class="hero-noticias">
+        <h1 style="color: #ffffff;">Membros | Meninas de Sistemas</h1>
+    </section>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main style="padding: 40px 20px;">
+        <section class="missao-membros" style="max-width: 1000px; margin: 0 auto;">
+            <div class="missao-conteudo" style="text-align: center; margin-bottom: 40px;">
+                <h2 style="color: #56279b; font-size: 1.8rem;">Conheça nossa equipe</h2>
+                <p class="subtitulo" style="color: #666; font-size: 1rem; margin-top: 8px;">
+                    Aqui estão as pessoas que tornam o projeto possível — coordenação, facilitadoras, desenvolvedoras e design.
+                </p>
+            </div>
+
+            <div class="grid-membros">
+
+                <!-- Prof. Dr. Carlos Portela -->
+                <div class="card-membro" data-link="membros-ativos/carlosp.html">
+                    <img src="../assets/images/membros/carlosp.png" alt="Prof. Dr. Carlos Portela">
+                    <div class="card-corpo">
+                        <span class="tag-funcao">Coordenação & Pesquisa</span>
+                        <h3>Prof. Dr. Carlos Portela</h3>
+                        <p>Docente da UFPA Campus Cametá e coordenador do LA FocA.</p>
+                        <div class="membro-redes">
+                            <a href="https://instagram.com/portelacarlos" target="_blank" class="icone-rede instagram"><svg></svg></a>
+                            <a href="mailto:csp@ufpa.br" class="icone-rede email"><svg></svg></a>
+                            <a href="https://facebook.com/CarlosSPortela" target="_blank" class="icone-rede facebook"><svg></svg></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gleyciane Barroso -->
+                <div class="card-membro" data-link="membros-ativos/gleycianeb.html">
+                    <img src="../assets/images/membros/gleycib.png" alt="Gleyciane Barroso">
+                    <div class="card-corpo">
+                        <span class="tag-funcao">Mestra em Computação | UI/UX</span>
+                        <h3>Gleyciane Barroso</h3>
+                        <p>Especialista em Interação Humano-Computador e acessibilidade.</p>
+                        <div class="membro-redes">
+                            <a href="#" class="icone-rede instagram"><svg></svg></a>
+                            <a href="#" class="icone-rede email"><svg></svg></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vitória Peres -->
+                <div class="card-membro" data-link="membros-ativos/vitoriaperes.html">
+                    <img src="../assets/images/membros/vitoria.jpeg" alt="Vitória Peres">
+                    <div class="card-corpo">
+                        <span class="tag-funcao">Gestão de Projetos | Front-end</span>
+                        <h3>Vitória Peres</h3>
+                        <p>Scrum Master, Product Owner e mestranda em Computação Aplicada.</p>
+                        <div class="membro-redes">
+                            <a href="https://instagram.com/vivi.devitoria" target="_blank" class="icone-rede instagram"><svg></svg></a>
+                            <a href="mailto:vitoriaperez6@gmail.com" class="icone-rede email"><svg></svg></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lorena Valeska -->
+                <div class="card-membro" data-link="membros-ativos/lorenavaleska.html">
+                    <img src="../assets/images/membros/lorenavaleska.jpeg" alt="Lorena Valeska">
+                    <div class="card-corpo">
+                        <span class="tag-funcao">Inteligência Artificial | UI/UX</span>
+                        <h3>Lorena Valeska</h3>
+                        <p>Graduada em Sistemas de Informação, foco em IA aplicada à educação.</p>
+                        <div class="membro-redes">
+                            <a href="https://instagram.com/lrn_valeska" target="_blank" class="icone-rede instagram"><svg></svg></a>
+                            <a href="mailto:lrnvaleska@gmail.com" class="icone-rede email"><svg></svg></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Milena Brabo -->
+                <div class="card-membro" data-link="membros-ativos/milenabrabo.html">
+                    <img src="../assets/images/membros/milenabrabo.jpeg" alt="Milena Brabo">
+                    <div class="card-corpo">
+                        <span class="tag-funcao">Full-Stack | Educação</span>
+                        <h3>Milena Brabo</h3>
+                        <p>Graduanda em Sistemas de Informação, desenvolvimento educacional.</p>
+                        <div class="membro-redes">
+                            <a href="https://www.instagram.com/milena_brabo" target="_blank" class="icone-rede instagram"><svg></svg></a>
+                            <a href="mailto:milenalopesb8@gmail.com" class="icone-rede email"><svg></svg></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Luciele Sanches -->
+                <div class="card-membro" data-link="membros-ativos/lucielesanches.html">
+                    <img src="../assets/images/membros/lu.jpeg" alt="Luciele Sanches">
+                    <div class="card-corpo">
+                        <span class="tag-funcao">Engenharia de Software | Front-end</span>
+                        <h3>Luciele Sanches</h3>
+                        <p>Bolsista e gestora do projeto, atua como designer.</p>
+                        <div class="membro-redes">
+                            <a href="#" class="icone-rede instagram"><svg></svg></a>
+                            <a href="#" class="icone-rede email"><svg></svg></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER PADRONIZADO -->
+    <footer class="footer-roxeado">
+        <div class="footer-conteudo">
+            <div class="footer-brand">
+                <img src="../assets/images/icons/LogoMeninasDeSistema.png" alt="Logo Meninas de Sistemas">
+            </div>
+            <div class="footer-links">
+                <div>
+                    <h4>Navegação</h4>
+                    <a href="../index.html">Página Inicial</a>
+                    <a href="../noticias/index.html">Notícias</a>
+                    <a href="../eventos/index.html">Eventos</a>
+                    <a href="index.html">Membros</a>
+                    <a href="../sobre/index.html">Sobre</a>
+                    <a href="../admim/login_home.html">Login</a>
+                </div>
+                <div>
+                    <h4>Cidades</h4>
+                    <a href="#">Cametá</a>
+                    <a href="#">Oeiras</a>
+                    <a href="#">Limoeiro do Ajurú</a>
+                </div>
+                <div>
+                    <h4>Parcerias</h4>
+                    <a href="#">UFPA</a>
+                    <a href="#">SBC</a>
+                    <a href="#">Meninas Digitais</a>
+                    <a href="#">PROEX</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Meninas de Sistemas | Universidade Federal do Pará</p>
+        </div>
+    </footer>
+
+    <!-- JS GLOBAL E LOCAL -->
+    <script src="../assets/js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.card-membro').forEach(card => {
+                card.addEventListener('click', e => {
+                    if (e.target.closest('.membro-redes')) return;
+                    const link = card.dataset.link;
+                    if (link) window.location.href = link;
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
